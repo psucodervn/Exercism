@@ -2,9 +2,13 @@ package hamming
 
 import "errors"
 
+var (
+	ErrInvalidInput = errors.New("invalid input")
+)
+
 func Distance(a, b string) (int, error) {
 	if len(a) != len(b) {
-		return 0, errors.New("invalid input")
+		return 0, ErrInvalidInput
 	}
 	diff := 0
 	for i := range a {
