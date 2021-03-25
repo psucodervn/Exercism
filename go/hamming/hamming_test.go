@@ -1,10 +1,13 @@
 package hamming
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestHamming(t *testing.T) {
 	for _, tc := range testCases {
 		got, err := Distance(tc.s1, tc.s2)
+		t.Logf("%v %v\n", got, err)
 		if tc.expectError {
 			// check if err is of error type
 			var _ error = err
