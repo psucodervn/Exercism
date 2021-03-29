@@ -7,19 +7,19 @@ describe "RnaComplement" do
       RnaComplement.of_dna("C").should eq "G"
     end
 
-    pending "correctly transcribes guanine to cytocine" do
+    it "correctly transcribes guanine to cytocine" do
       RnaComplement.of_dna("G").should eq "C"
     end
 
-    pending "correctly transcribes thymine to adenine" do
+    it "correctly transcribes thymine to adenine" do
       RnaComplement.of_dna("T").should eq "A"
     end
 
-    pending "correctly transcribes adenine to uracil" do
+    it "correctly transcribes adenine to uracil" do
       RnaComplement.of_dna("A").should eq "U"
     end
 
-    pending "correctly transcribes all dna nucleotides to their rna compliment" do
+    it "correctly transcribes all dna nucleotides to their rna compliment" do
       RnaComplement.of_dna("ACGTGGTCTTAA").should eq "UGCACCAGAAUU"
     end
   end

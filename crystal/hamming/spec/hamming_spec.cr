@@ -6,41 +6,41 @@ describe "Hamming" do
     Hamming.distance("", "").should eq(0)
   end
 
-  pending "single letter identical strands" do
+  it "single letter identical strands" do
     Hamming.distance("A", "A").should eq(0)
   end
 
-  pending "single letter different strands" do
+  it "single letter different strands" do
     Hamming.distance("G", "T").should eq(1)
   end
 
-  pending "long identical strands" do
+  it "long identical strands" do
     Hamming.distance("GGACTGAAATCTG", "GGACTGAAATCTG").should eq(0)
   end
 
-  pending "long different strands" do
+  it "long different strands" do
     Hamming.distance("GGACGGATTCTG", "AGGACGGATTCT").should eq(9)
   end
 
-  pending "disallow first strand longer" do
+  it "disallow first strand longer" do
     expect_raises(ArgumentError) do
       Hamming.distance("AATG", "AAA")
     end
   end
 
-  pending "disallow second strand longer" do
+  it "disallow second strand longer" do
     expect_raises(ArgumentError) do
       Hamming.distance("ATA", "AGTG")
     end
   end
 
-  pending "disallow left empty strand" do
+  it "disallow left empty strand" do
     expect_raises(ArgumentError) do
       Hamming.distance("", "G")
     end
   end
 
-  pending "disallow right empty strand" do
+  it "disallow right empty strand" do
     expect_raises(ArgumentError) do
       Hamming.distance("G", "")
     end
